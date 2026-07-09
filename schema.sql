@@ -27,5 +27,5 @@ CREATE TABLE courses (
 -- student / student123
 -- Mat khau duoc luu bang SHA-256 hash, dung voi HashUtil.hashSHA256().
 INSERT INTO users (username, password, fullname, role) VALUES
-('admin', '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9', 'Quan tri vien', 'admin'),
+('admin', '240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9', 'DHV HCM', 'admin'),
 ('student', '703b0a3d6ad75b649a28adde7d83c6251da457549263bc7ff45ec709b0a8448b', 'Sinh vien mau', 'student');

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng ký tài khoản | Hệ thống quản lý môn học</title>
+    <title>Đăng ký tài khoản | DHV HCM</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
         <div class="auth-card glass-panel">
             <div class="auth-header">
                 <h2>Đăng Ký</h2>
-                <p>Tạo tài khoản mới cho sinh viên</p>
+                <p>DHV HCM</p>
             </div>
 
             <%

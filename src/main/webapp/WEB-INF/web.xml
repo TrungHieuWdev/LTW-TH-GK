@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
 
-    <display-name>Hệ thống quản lý môn học giữa kỳ</display-name>
+    <display-name>DHV HCM</display-name>
 
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>

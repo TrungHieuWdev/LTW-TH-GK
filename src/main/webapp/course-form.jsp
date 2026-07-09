@@ -24,12 +24,9 @@
     %>
 
     <header class="header-nav glass-panel">
-        <a href="${pageContext.request.contextPath}/course?action=list" class="logo-brand">DHV EdTech</a>
+        <a href="${pageContext.request.contextPath}/course?action=list" class="logo-brand">DHV HCM</a>
         <div class="user-profile">
-            <div class="user-info">
-                <div class="user-name"><%= currentUser.getFullname() %></div>
-                <div class="user-role"><%= currentUser.getRole().equals("admin") ? "Quản trị viên" : "Sinh viên" %></div>
-            </div>
+            <div class="user-role"><%= currentUser.getRole().equals("admin") ? "Quản trị viên" : "Sinh viên" %></div>
             <a href="${pageContext.request.contextPath}/logout" class="btn btn-secondary btn-sm">Đăng xuất</a>
         </div>
     </header>
