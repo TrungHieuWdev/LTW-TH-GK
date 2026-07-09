@@ -1,0 +1,29 @@
+{
+  "terminal.integrated.env.windows": {
+    "MAVEN_HOME": "${workspaceFolder}\\.tools\\apache-maven",
+    "Path": "${workspaceFolder}\\.tools\\apache-maven\\bin;${env:Path}"
+  },
+  "terminal.integrated.profiles.windows": {
+    "PowerShell Maven": {
+      "source": "PowerShell",
+      "args": [
+        "-NoExit",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        ". '${workspaceFolder}\\.vscode\\mvn-profile.ps1'; Set-Location '${workspaceFolder}'"
+      ]
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell Maven",
+  "terminal.integrated.automationProfile.windows": {
+    "source": "PowerShell",
+    "args": [
+      "-NoExit",
+      "-ExecutionPolicy",
+      "Bypass",
+      "-Command",
+      ". '${workspaceFolder}\\.vscode\\mvn-profile.ps1'; Set-Location '${workspaceFolder}'"
+    ]
+  }
+}
