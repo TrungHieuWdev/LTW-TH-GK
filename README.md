@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Java Web Product Management
 
 Project bai giua ky Java Web dung Servlet, JSP, JDBC, MySQL va BCrypt. Project co the chay bang Maven voi `tomcat7:run` hoac deploy file WAR len Tomcat.
@@ -19,6 +18,7 @@ src/main/java/com/midterm/controller
     LoginServlet.java
     LogoutServlet.java
     ProductServlet.java
+    RegisterServlet.java
 
 src/main/java/com/midterm/dao
     UserDAO.java
@@ -34,6 +34,7 @@ src/main/java/com/midterm/util
 
 src/main/webapp
     login.jsp
+    register.jsp
     product-list.jsp
     product-form.jsp
     assets/style.css
@@ -107,17 +108,6 @@ Mo trinh duyet:
 http://localhost:8080/product-management/login
 ```
 
-## Deploy len Tomcat
-
-1. Copy file `target/product-management.war`.
-2. Dan vao thu muc `webapps` cua Tomcat.
-3. Chay Tomcat bang `startup.bat` tren Windows hoac `startup.sh` tren Linux/macOS.
-4. Mo trinh duyet:
-
-```text
-http://localhost:8080/product-management/login
-```
-
 ## Tai khoan demo
 
 ```text
@@ -129,61 +119,26 @@ Mat khau trong database duoc luu o cot `password_hash` va da duoc bam bang BCryp
 
 ## Giai thich code ngan gon
 
-- `LoginServlet`: nhan username va password tu `login.jsp`, tim user trong database bang `UserDAO`, sau do dung `PasswordUtil.checkPassword()` de kiem tra mat khau voi BCrypt. Neu dung thi tao session va chuyen sang `/products`. Neu sai thi quay lai `login.jsp` va hien thi loi.
+- `LoginServlet`: nhan username va password tu `login.jsp`, tim user trong database bang `UserDAO`, sau do dung `PasswordUtil.checkPassword()` de kiem tra mat khau voi BCrypt.
+- `RegisterServlet`: nhan thong tin dang ky, bam mat khau bang BCrypt va luu user moi vao bang `users`.
 - `LogoutServlet`: huy session hien tai va chuyen ve trang dang nhap.
-- `ProductServlet`: kiem tra session truoc khi hien thi danh sach san pham. Neu chua dang nhap thi chuyen ve `/login`. Servlet nay xu ly hien thi danh sach, them, sua va xoa san pham.
-- `UserDAO`: dung `PreparedStatement` de lay user theo username, khong noi chuoi SQL truc tiep.
-- `ProductDAO`: dung `PreparedStatement` cho cac chuc nang lay danh sach, them, sua va xoa san pham.
+- `ProductServlet`: kiem tra session va xu ly danh sach, them, sua, xoa san pham.
+- `UserDAO`: truy van va tao user trong database bang `PreparedStatement`.
+- `ProductDAO`: truy van, them, sua, xoa san pham bang `PreparedStatement`.
 - `DBConnection`: tao ket noi JDBC toi MySQL.
 - `PasswordUtil`: chua ham bam mat khau va ham kiem tra mat khau bang BCrypt.
-- `login.jsp`: form dang nhap va hien thi loi khi dang nhap sai.
+- `login.jsp`: form dang nhap.
+- `register.jsp`: form dang ky tai khoan.
 - `product-list.jsp`: hien thi bang san pham va form them san pham.
 - `product-form.jsp`: form sua san pham.
 
 ## Luong chay chinh
 
 1. Nguoi dung vao `/login`.
-2. Nhap `admin / 123456`.
+2. Dang nhap bang tai khoan co trong bang `users`.
 3. `LoginServlet` lay user trong MySQL.
 4. BCrypt so sanh mat khau nhap vao voi `password_hash`.
 5. Neu dung, servlet tao session `loggedInUser` va chuyen sang `/products`.
 6. Neu truy cap `/products` khi chua co session, `ProductServlet` chuyen ve `/login`.
 7. Nguoi dung co the them, sua, xoa san pham.
 8. Bam dang xuat thi `LogoutServlet` huy session.
-=======
-# Bai thi giua ky - He thong quan ly mon hoc
-
-Ung dung web quan ly mon hoc viet bang Java Servlet/JSP, dung MySQL va Maven.
-
-## 1. Chuan bi co so du lieu
-
-Chay file `schema.sql` de tao database `appdb` va cac bang can thiet.
-
-Neu dung script da co trong du an:
-
-```powershell
-.\setup-db.ps1 -DbUser root -DbPassword "MAT_KHAU_MYSQL"
-```
-
-Thay `MAT_KHAU_MYSQL` bang mat khau MySQL tren may cua ban.
-
-## 2. Chay du an
-
-Chay lenh Maven sau tai thu muc goc cua du an:
-
-```bash
-mvn tomcat7:run
-```
-
-Sau do mo trinh duyet:
-
-```text
-http://localhost:8080/
-```
-
-Neu MySQL cua ban co mat khau, chay bang script sau de app nhan dung thong tin database:
-
-```powershell
-.\run.ps1 -DbUser root -DbPassword "MAT_KHAU_MYSQL"
-```
->>>>>>> 23873e3d3a5f58ff1b67806cc3adb144c36b9b03
